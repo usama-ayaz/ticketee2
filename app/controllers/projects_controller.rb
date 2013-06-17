@@ -26,8 +26,9 @@ else
 flash[:alert] = "Project has not been updated."
 render action: "edit"
 end
-
 end
+
+
 
 def destroy
 @project.destroy

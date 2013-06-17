@@ -26,7 +26,13 @@ else
 flash[:alert] = "Project has not been updated."
 render action: "edit"
 end
+end
 
+def destroy
+@project = Project.find(params[:id])
+@project.destroy
+flash[:notice] = "Project has been destroyed."
+redirect_to projects_path
 end
 
 def destroy
@@ -56,12 +62,12 @@ flash[:alert] = "The project you were looking" +
 redirect_to projects_path
 end
 
-
-
-end
-
 before_action :set_project, only: [:show,
 :edit,
 :update,
 :destroy]
+
+
+end
+
 
