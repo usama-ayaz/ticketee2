@@ -11,6 +11,13 @@ def new
 @ticket = @project.tickets.build
 end
 
+def destroy
+@ticket.destroy
+flash[:notice] = "Ticket has been deleted."
+redirect_to @project
+end
+
+
 def edit
 end
 
